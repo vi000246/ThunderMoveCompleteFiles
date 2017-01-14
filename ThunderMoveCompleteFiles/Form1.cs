@@ -53,7 +53,6 @@ namespace ThunderMoveCompleteFiles
             Properties.Settings.Default["Size"] = numSize.Value;
             Properties.Settings.Default.Save();
 
-
             if (!Directory.Exists(textBox1.Text)|| !Directory.Exists(textBox2.Text))
             {
                 MessageBox.Show("請選擇正確的下載路徑和已完成路徑!!");
@@ -72,8 +71,13 @@ namespace ThunderMoveCompleteFiles
                     //如果資料夾裡有大於指定MB的檔 且都沒有.xltd副檔名 就搬移資料夾
                     if (files.Where(x => x.Length > fileSize).Any(x => x.Extension != ".xltd"))
                     {
-                        //將資料夾從原本路徑搬到已完成資料夾
-                        Directory.Move(element.FullName, textBox2.Text+"\\"+element.Name);
+                        try
+                        {
+                            //將資料夾從原本路徑搬到已完成資料夾
+                            Directory.Move(element.FullName, textBox2.Text + "\\" + element.Name);
+                        }
+                        //忽略拒絕存取路徑的Exception 因為有時檔案會被迅雷卡住
+                        catch{ }
                     }
                 }
             
