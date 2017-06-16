@@ -80,6 +80,7 @@ namespace ThunderMoveCompleteFiles
                         catch{ }
                     }
                 }
+            label5.Text = "執行成功";
             
         }
     }

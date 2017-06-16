@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numSize = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,11 +137,21 @@
             this.numSize.Size = new System.Drawing.Size(67, 22);
             this.numSize.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(370, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 12);
+            this.label5.TabIndex = 6;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 131);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.numSize);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -172,6 +183,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numSize;
+        private System.Windows.Forms.Label label5;
     }
 }
 
