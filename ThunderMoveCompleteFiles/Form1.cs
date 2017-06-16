@@ -69,7 +69,7 @@ namespace ThunderMoveCompleteFiles
                     var files = element.GetFiles("*", SearchOption.AllDirectories);
                     var fileSize = numSize.Value * 1024 * 1024;//MB轉成bytes
                     //如果資料夾裡有大於指定MB的檔 且都沒有.xltd副檔名 就搬移資料夾
-                    if (files.Where(x => x.Length > fileSize).Any(x => x.Extension != ".xltd"))
+                    if (files.Where(x => x.Length > fileSize).Any(x => !x.Extension.ToLower().Contains(".xltd")&& !x.Extension.ToLower().Contains(".td")))
                     {
                         try
                         {
